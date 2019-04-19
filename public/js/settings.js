@@ -16,7 +16,7 @@ t.get('card', 'shared', 'habitTrackerSettings')
      // do nothing
   });
 
-// Stores in habitTrackerSettings when press save button
+// Stores settings in habitTrackerSettings when user presses save button
 document.getElementById('save-btn').addEventListener('click', function(){
   
   const daysInWeek = document.querySelectorAll("#settings_form [name='daysInWeek']")[0].value;
@@ -30,7 +30,7 @@ document.getElementById('save-btn').addEventListener('click', function(){
   });
 });
 
-// Remove habitTrackerSettings when press remove button
+// Removes habitTrackerSettings when user presses remove button
 document.getElementById('remove-btn').addEventListener('click', function(){
   return t.set('card', 'shared', 'habitTrackerSettings', null)
         .then(function(){
@@ -40,17 +40,12 @@ document.getElementById('remove-btn').addEventListener('click', function(){
         });
 });
 
-// Bring up information modal when user clicks "How to use Streak"
+// Brings up information modal when user clicks "How to use Streak"
 document.getElementById('how-to-use').addEventListener('click', function(){
   return t.modal({
     url: './modal.html',
-    height: 350,
+    height: 360,
     fullscreen: false,
-    // optional function to be called if user closes modal (via `X` or escape, etc)
-    // callback: () => console.log('Goodbye.'),
-    // optional title for header chrome
     title: 'Streak - habit tracker'
-    // optional action buttons for header chrome
-    // max 3, up to 1 on right side
   })
 });

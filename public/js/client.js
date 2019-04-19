@@ -1,6 +1,5 @@
 /* global TrelloPowerUp, moment, badgeUtil */
 
-// we can access Bluebird Promises as follows
 window.Promise = TrelloPowerUp.Promise;
 var now = moment().toDate();
 const timezone = moment.tz.guess();
@@ -97,9 +96,6 @@ TrelloPowerUp.initialize({
   }
 });
 
-
-///////////////////////////////////////////////////////////////////////// badgeUtil
-
 /**Returns streak, assuming user has completed today (if not and it's required, 0 streak)
  * @param {moment}            today           today's date
  * @param {string[]}          days            days habit completed
@@ -151,15 +147,6 @@ var getStreak = function(today, days, firstDayOfWeek, daysInWeek) {
     return getStreakForWeek(moment(today, 'MM/DD/YYYY'), daysThisWeek, firstDayOfWeek, daysInWeek);
 };
 
-/** Gets end day of week that was previousCount weeks ago
- * @param {moment}  today
- * @param {"M"/"S"} firstDayOfWeek
- * @param {number}  weeksAgo        i.e last week = 1 week ago  
- */
-// var getEndDayOfPreviousWeek = function(today, firstDayOfWeek, weeksAgo) {
-
-// }
-
 /** Get starting date of the week that the given day is in
  * @param {"MONDAY" || "SUNDAY"} firstDayOfWeek
  * @param {moment}               day
@@ -185,7 +172,6 @@ var getStreakForWeek = function(endDay, daysThisWeek, firstDayOfWeek, daysInWeek
     const daysRemainingThisWeek = 7 - calendarDates.length;
 
     if (daysThisWeek.length >= daysInWeek - daysRemainingThisWeek) {
-        // return Math.min(daysThisWeek.length, daysInWeek);
       return daysThisWeek.length;
     }
 
@@ -207,7 +193,6 @@ var getStreakForWeek = function(endDay, daysThisWeek, firstDayOfWeek, daysInWeek
         dateLooper.subtract(1, 'd');
     }
 
-    // return Math.min(streakCount, daysInWeek); // This makes it so that if you have a once a week habit and do it twice it only counts as once...
   return streakCount;
 }
 
