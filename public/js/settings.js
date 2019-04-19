@@ -52,7 +52,7 @@ document.getElementById('how-to-use').addEventListener('click', function(){
     height: 500,
     fullscreen: false,
     // optional function to be called if user closes modal (via `X` or escape, etc)
-    callback: () => console.log('Goodbye.'),
+    // callback: () => console.log('Goodbye.'),
     // optional title for header chrome
     title: 'Streak - habit tracker'
     // optional action buttons for header chrome
