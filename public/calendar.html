@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://p.trellocdn.com/power-up.min.css">
+    <link rel="stylesheet" href="datepicker.css">
+    <script src="https://p.trellocdn.com/power-up.min.js"></script>
+  </head>
+  <body style="overflow:hidden;">
+    <div class="dpicker-widget">
+      <div style="display: none;" class="datepicker-select u-clearfix"> <!-- seems like input is required -->
+        <div class="datepicker-select-date">
+          <label class="datepicker-select-label">
+            Start date
+            <input id="date-input" class="datepicker-select-input" type="text" placeholder="Enter date">
+          </label>
+        </div>
+      </div>
+      <div class="pickers js-dpicker-cal">
+        <div id="datepicker"></div>
+      </div>
+      
+    </div>
+    <script src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="./js/moment.js"></script>
+    <script src="./js/pikaday.js"></script>
+    <script src="./js/calendar.js"></script>
+  </body>
+</html>

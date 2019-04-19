@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://p.trellocdn.com/power-up.min.css">
+    <link rel="stylesheet" href="datepicker.css">
+    <script src="https://p.trellocdn.com/power-up.min.js"></script>
+  </head>
+  <body style="overflow:hidden;">
+   <div>
+     <form id="settings_form">
+         Days in week: <select name="daysInWeek">
+          <option value="7">7</option>
+          <option value="6">6</option>
+          <option value="5">5</option>
+          <option value="4">4</option>
+          <option value="3">3</option>
+          <option value="2">2</option>
+          <option value="1">1</option>
+        </select> 
+       <br> First day of week:
+        <select name="firstDayOfWeek">
+          <option value="MONDAY">Monday</option>
+          <option value="SUNDAY">Sunday</option>
+        </select> 
+      <div class="datepicker-confirm-btns" style="margin-top:4px;">
+        <button id="save-btn" class="mod-primary mod-bottom">Save</button>
+        <button id="remove-btn" class="mod-danger mod-bottom remove-date js-remove-date u-hidden" type="button">Remove</button>
+      </div>
+       </form>
+      <div id="how-to-use" class="quiet">
+        How to use Streak
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="./js/moment.js"></script>
+    <script src="./js/pikaday.js"></script>
+    <script src="./js/settings.js"></script>
+  </body>
+</html>

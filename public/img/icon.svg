@@ -1,0 +1,15 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+ "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="160px" height="160px" viewBox="0 0 160 160">
+
+<g
+stroke="#6B808C" stroke-width="20px" fill="none" stroke-linecap="round" stroke-linejoin="round">
+
+  <rect x="10" y="10" width="140" height="140"></rect>
+  <line x1="50" y1="50" x2="110" y2="110"></line>
+  <line x1="110" y1="50" x2="50" y2="110"></line>
+
+</g>
+</svg>
