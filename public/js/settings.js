@@ -2,11 +2,6 @@
 
 var Promise = TrelloPowerUp.Promise;
 var t = TrelloPowerUp.iframe();
-var now = moment().toDate();
-var snoozeTime = null;
-var token = null;
-
-var TIME_FORMAT = 'LT';
 
 // Show remove button and currently stored values if habitTrackerSettings exists
 t.get('card', 'shared', 'habitTrackerSettings')
@@ -49,7 +44,7 @@ document.getElementById('remove-btn').addEventListener('click', function(){
 document.getElementById('how-to-use').addEventListener('click', function(){
   return t.modal({
     url: './modal.html',
-    height: 500,
+    height: 350,
     fullscreen: false,
     // optional function to be called if user closes modal (via `X` or escape, etc)
     // callback: () => console.log('Goodbye.'),
