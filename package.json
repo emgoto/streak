@@ -1,5 +1,5 @@
 {
-    "name": "Habit-Tracker",
+    "name": "streak",
     "version": "1.0.0",
     "description": "A Trello Power-Up that allows you to track your habits.",
     "main": "app.js",
@@ -8,15 +8,9 @@
         "test": "jest"
     },
     "dependencies": {
-        "bluebird": "^3.4.7",
         "compression": "1.6.2",
         "cors": "^2.8.1",
-        "express": "4.14.0",
-        "nedb": "^1.8.0",
-        "request": "^2.79.0",
-        "request-promise": "^4.1.1",
-        "body-parser": "^1.15.2",
-        "lodash": "^4.17.4"
+        "express": "4.14.0"
     },
     "keywords": [
         "node",
