@@ -8,15 +8,9 @@ var token = null;
 
 var TIME_FORMAT = 'LT';
 
-// var resize = function(){
-//   // t.sizeTo('.dpicker-widget');
-// };
-
-
 var setDays = function(t, habitTrackerDays) {
  return t.set('card', 'shared', 'habitTrackerDays', habitTrackerDays);
 }
-
 
 let selectedDates = [];
 
@@ -26,7 +20,6 @@ t.get('card', 'shared')
   if (shared.habitTrackerDays) {
     selectedDates = shared.habitTrackerDays;
   }
-  
   
   // Set first day of week as Sunday (default) or Monday
   let firstDay = 0;
@@ -46,9 +39,6 @@ t.get('card', 'shared')
     container: document.getElementById('datepicker'),
     field: document.getElementById('date-input'),
     firstDay,
-    // onDraw: function() {
-    //   resize();
-    // },
      onSelect: (date) => {
           // Format selected date
           const formattedDate = moment(date).format('MM/DD/YYYY');
@@ -75,7 +65,3 @@ t.get('card', 'shared')
   console.log('Error: ', error);
 });
   
-
-// t.render(function(){
-//   resize().done();
-// })
