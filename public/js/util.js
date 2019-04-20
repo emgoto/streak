@@ -1,5 +1,3 @@
-const moment = require('./moment-timezone-with-data-2012-2022.js');
-
 /**Returns streak, assuming user has completed today (if not and it's required, 0 streak)
  * @param {moment}            today           today's date
  * @param {string[]}          days            days habit completed

@@ -1,4 +1,5 @@
-/* global TrelloPowerUp, moment, badgeUtil */
+/* global TrelloPowerUp, moment */
+// const moment = require('./moment-timezone-with-data-2012-2022.js');
 
 window.Promise = TrelloPowerUp.Promise;
 var now = moment().toDate();
