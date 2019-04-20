@@ -175,11 +175,11 @@
   background-color: #F5F6F7;    
 }
 
-.how-to-use {
+#how-to-use {
   text-align: right;
   padding-top: 8px;
 }
 
-.how-to-use:hover {
+#how-to-use:hover {
  color: #78909e;
 }
