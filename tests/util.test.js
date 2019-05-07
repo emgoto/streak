@@ -1,5 +1,5 @@
-const util = require('../public/js/util.js');
-const moment = require('../public/js/moment.js');
+const util = require('../js/util.js');
+const moment = require('../js/moment-timezone-with-data-2012-2022.js');
    
 let today;     // saturday 15th Dec 2018
 let yesterday; // friday 14th Dec 2018
@@ -113,6 +113,11 @@ describe('getStreak', () => {
                                              "03/27/2019", "03/28/2019"], 
                                             "MONDAY", 7)
         ).toEqual(19);
+    });
+    test('3 day week', () => { // Thursday / Saturday last week, haven't hit this week. should still have a streak
+        expect(util.getStreak(moment('2019-05-07', 'YYYY-MM-DD'), ["05/02/2019", "05/04/2019"], 
+                                            "MONDAY", 3)
+        ).toEqual(2);
     });
 
 });   
