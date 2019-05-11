@@ -19,9 +19,16 @@ var getBadge = function(t) {
     const streak = this.getStreak(today, data.habitTrackerDays, FIRST_DAY_OF_WEEK, DAYS_IN_WEEK);
 
     const fire_icon = `${window.location}img/fire_icon.png`;
+
+    const streakUntilYesterday = this.getStreak(yesterday, data.habitTrackerDays, FIRST_DAY_OF_WEEK, DAYS_IN_WEEK);
   
+    if (streakUntilYesterday > 0 && streakUntilYesterday > streak) {
+      return [{
+        text: `Streak: ${streakUntilYesterday}`,
+        color: 'yellow'
+      }];
     // If streak is 7 or more, include fire emoji
-    if (streak > 6) {
+    } else if (streak > 6) {
       return [{
         icon: fire_icon,
         text: `Streak: ${streak}`,
@@ -32,16 +39,6 @@ var getBadge = function(t) {
         text: `Streak: ${streak}`,
         color: 'green'
       }]; 
-    } else {
-      const streakUntilYesterday = this.getStreak(yesterday, data.habitTrackerDays, FIRST_DAY_OF_WEEK, DAYS_IN_WEEK);
- 
-       // Else yellow
-      if (streakUntilYesterday > 0) {
-        return [{
-          text: `Streak: ${streakUntilYesterday}`,
-          color: 'yellow'
-        }];
-      }
     }
     return [{
       text: `Streak: 0`,

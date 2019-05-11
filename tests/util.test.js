@@ -119,5 +119,10 @@ describe('getStreak', () => {
                                             "MONDAY", 3)
         ).toEqual(2);
     });
+    test('3 day week', () => { // Thursday / Friday last week, hit Friday this week. Today is Friday. Should have a streak of 3.
+    expect(util.getStreak(moment('2019-05-10', 'YYYY-MM-DD'), ["05/02/2019", "05/03/2019", "05/10/2019"], 
+                                        "MONDAY", 3)
+    ).toEqual(3);
+});
 
 });   
