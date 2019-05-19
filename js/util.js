@@ -24,26 +24,24 @@ var getStreak = function(today, days, firstDayOfWeek, daysInWeek) {
     // days we have hit the streak this week >= days we need to hit the streak - daysRemainingThisWeek
     if (daysThisWeek.length >= daysInWeek - daysRemainingThisWeek) {
         const streakThisWeek = daysThisWeek.length;
-      
+
         let endDayLooper = moment(datesThisWeek[0], 'MM/DD/YYYY').subtract(1, 'day');
         let totalStreak = streakThisWeek;
-        let counter = totalStreak;
+        let shouldLoop = true;
 
-        // Case if this week we haven't started streaking yet, but it's still possible to maintain a streak
-        if (counter === 0) {
-            counter = 1;
-        }
-
-        while (counter > 0) {
-    
+        while (shouldLoop) {
             const datesThatWeek = calendarDatesThisWeek(firstDayOfWeek, endDayLooper);
             const daysThatWeek = days.filter(value => -1 !== datesThatWeek.indexOf(value));
             const streakForThatWeek = getStreakForWeek(endDayLooper, daysThatWeek, firstDayOfWeek, daysInWeek);
 
             totalStreak += streakForThatWeek;
 
-            // Prepare for next loop
-            counter = streakForThatWeek;
+            // Prepare for next loop, only if legitimate
+            if (streakForThatWeek >= daysInWeek) {
+                shouldLoop = true;
+            } else {
+                shouldLoop = false;
+            } 
             endDayLooper = endDayLooper.subtract(7, 'day');
         }
  

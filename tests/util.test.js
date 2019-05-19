@@ -122,7 +122,18 @@ describe('getStreak', () => {
     test('3 day week', () => { // Thursday / Friday last week, hit Friday this week. Today is Friday. Should have a streak of 3.
     expect(util.getStreak(moment('2019-05-10', 'YYYY-MM-DD'), ["05/02/2019", "05/03/2019", "05/10/2019"], 
                                         "MONDAY", 3)
-    ).toEqual(3);
-});
-
+        ).toEqual(3);
+    });
+    test('5 day week', () => { // Thursday / Friday last week, hit Friday this week. Today is Friday. Should have a streak of 3.
+        expect(util.getStreak(moment('2019-05-11', 'YYYY-MM-DD'), ["05/02/2019", "05/05/2019", "05/08/2019", "05/09/2019", "05/10/2019"], 
+                                            "MONDAY", 5)
+        ).toEqual(3);
+    });
+    test('7 day week', () => { // Random days, break in streak on 11th, 18th - 20th = streak of 3
+        expect(util.getStreak(moment('2019-05-20', 'YYYY-MM-DD'), ["05/04/2019", "05/05/2019", "05/06/2019", "05/07/2019", "05/8/2019",
+                                                                    "05/09/2019", "05/10/2019", "05/12/2019", "05/13/2019", "05/18/2019",
+                                                                    "05/19/2019", "05/20/2019"], 
+                                            "MONDAY", 7)
+        ).toEqual(3);
+    });
 });   
