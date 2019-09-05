@@ -85,7 +85,7 @@ TrelloPowerUp.initialize({
           content: {
             type: 'iframe',
             url: t.signUrl('./calendar.html'),
-            height: 260 // Max height is 500
+            height: 280 // Max height is 500
         }  
           };
       }
