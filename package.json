@@ -1,0 +1,17 @@
+{
+    "name": "streak",
+    "version": "1.0.0",
+    "description": "A Trello Power-Up that allows you to track your habits.",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js",
+        "test": "jest",
+        "build": "webpack"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "jest": "^23.6.0",
+        "webpack": "^4.39.1",
+        "webpack-cli": "^3.3.6"
+    }
+}

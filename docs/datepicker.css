@@ -19,6 +19,17 @@
   float: right;
   margin-right: 0;
 }
+
+.datepicker-confirm-btns {
+    margin-top: -8px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#remove-btn {
+  margin-right: 8px;
+}
+
 .pika-single {
   display: block;
   position: relative;
@@ -150,16 +161,15 @@
 }
 .pika-single .is-selected .pika-button {
   color: #fff;
-  background: #61BD4F; /* blue 500 */
+  background: #61BD4F;
 }
 .pika-single .is-selected .pika-button:hover {
-  background: #7BC86C; /* blue 400 */
+  background: #7BC86C;
 }
 .pika-single .is-disabled .pika-button {
-  color: #999;
-  cursor: default;
-  opacity: .3;
+  color: #fff;
   pointer-events: none;
+  background-color: #61BD4F;
 }
 .pika-single .pika-button:hover {
   background-color: #D6DADC;
@@ -175,12 +185,26 @@
   background-color: #F5F6F7;    
 }
 
-#how-to-use {
-  text-align: right;
+.how-to-use {
+  float: right;
   padding-top: 8px;
 }
 
-#how-to-use:hover {
+.how-to-use:hover {
  color: #78909e;
  cursor:pointer;
+}
+
+.commentContainer {
+  display: flex;
+}
+
+.enableButton {
+  margin: 0;
+  margin-left: 8px;
+  height: 33px;
+}
+
+#disabled-form {
+  text-align: center
 }

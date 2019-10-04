@@ -8,6 +8,12 @@
  */
 var getStreak = function(today, days, firstDayOfWeek, daysInWeek) {
     const todayString = today.format("MM/DD/YYYY");
+
+    // If the user has set daysInWeek to 0, all days count (filtering out any dates set in the future)
+    if (daysInWeek === 0) {
+        const filteredDays = days.filter(day => !moment(day, 'MM/DD/YYYY').isAfter(today));
+        return filteredDays.length;
+    }
   
     // If today is not included and it's a 7dayer, no streak
     if (!(days.indexOf(todayString) >= 0) && daysInWeek === 7) {
@@ -134,7 +140,7 @@ var getDatesInRange = function(startDay, endDay) {
     return datesThisWeek;
 }
 
-
+// For testing purposes
 if (typeof exports !== 'undefined') {
     exports.getStreak = getStreak;
     exports.getStreakForWeek = getStreakForWeek;
