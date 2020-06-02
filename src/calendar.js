@@ -99,6 +99,10 @@ t.render(function () {
               const formattedDate = moment(date).format('MM/DD/YYYY');
               return selectedDates.includes(formattedDate);
           },
+          // When new month is picked, resize calendar 
+          onDraw: () => {
+            t.sizeTo(document.body);
+          }
         });
       } 
     }).catch(function (e) {

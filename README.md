@@ -12,10 +12,16 @@ This Power-Up's docs folder is published using Github Pages and can be accessed 
 
 Github pages uses Jekyll so you'll need to do a few things to test this locally:
 
+First time:
 ```
 gem install github-pages
+npm install
+
+Every time:
+```
 jekyll serve
-./ngrok http 4000 #in another terminal window
+./ngrok http 4000
+npm run build -- --watch
 ```
 [See a full explanation here](https://www.emgoto.com/testing-trello-power-ups-on-github-pages/)
 
